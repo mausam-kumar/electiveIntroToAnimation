@@ -16,7 +16,7 @@
             margin: 30px auto;
             background-color: rgb(235, 214, 214);
         }
-        .hoverClass,.onLoad,.slideLeft,.squareRotate,.makeCircle{
+        .hoverClass,.onLoad,.slideLeft,.squareRotate,.makeCircle,.translateBox{
             height: 100px;
             width: 100px;
             margin-top: 10px;
@@ -65,6 +65,34 @@
         .makeCircle:hover{
             border-radius: 50%;
         }
+
+        @keyframes translateBoxLeftRight {
+            0%{
+                transform: translateX(-850px);
+            }
+            100%{
+                transform: translateX(1180px);
+            }
+        }
+        .translateBox{
+            animation: translateBoxLeftRight linear 5s infinite;
+        }
+        .translateBox1{
+            animation: translateBoxLeftRight ease-in 5s infinite;
+        }
+        .translateBox2{
+            animation: translateBoxLeftRight ease-in-out 5s infinite;
+        }
+        .translateBox3{
+            animation: translateBoxLeftRight ease-out 5s infinite;
+        }
+        .translateBox4{
+            animation: translateBoxLeftRight cubic-bezier(0.645, 0.045, 0.355, 1) 5s infinite;
+        }
+        .translateBox5{
+            animation: translateBoxLeftRight cubic-bezier(0.55, 0.085, 0.68, 0.53) 5s infinite;
+            
+        }
     </style>
 </head>
 <body>
@@ -83,5 +111,23 @@
     <div class="makeCircle">
 
     </div>
+    <div class="translateBox">
+
+    </div>  
+    <div class=" translateBox translateBox1">
+
+    </div>  
+    <div class=" translateBox translateBox2">
+
+    </div>  
+    <div class=" translateBox translateBox3">
+
+    </div>  
+    <div class=" translateBox translateBox4">
+
+    </div>  
+    <div class=" translateBox translateBox5">
+
+    </div>  
 </body>
 </html>
