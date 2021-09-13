@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 400px;
+            margin: 30px auto;
+            background-color: rgb(235, 214, 214);
+        }
+        .hoverClass,.onLoad,.slideLeft,.squareRotate,.makeCircle{
+            height: 100px;
+            width: 100px;
+            margin-top: 10px;
+            background-color: red;
+            transition: .5s all;
+            cursor: pointer;
+        }
+        .hoverClass:hover{
+            transform: scale(1.2);
+        }
+        @keyframes opacityChange {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+        
+        .onLoad{
+            animation: opacityChange ease-in 3s infinite;
+            animation-delay: 2s;
+        }
+        @keyframes slideIn {
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            50%{
+                transform: translateX(0%);
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+        }
+        .slideLeft{
+            animation: slideIn ease-in 3s infinite;
+            animation-delay: 1s;
+        }
+        
+        .squareRotate:hover{
+            transform: rotate(360deg);
+        }
+        .makeCircle:hover{
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="hoverClass">
+
+    </div>
+    <div class="onLoad">
+
+    </div>
+    <div class="slideLeft">
+
+    </div>
+    <div class="squareRotate">
+
+    </div>
+    <div class="makeCircle">
+
+    </div>
+</body>
+</html>
