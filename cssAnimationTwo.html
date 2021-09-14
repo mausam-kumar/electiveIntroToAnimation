@@ -11,55 +11,99 @@
             padding: 0px;
             box-sizing: border-box;
         }
-        .solarSystem{
-            margin: 400px auto;
-            height: 50vh;
-            border: 1px solid black;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+        body{
+            height: 100vh;
+            width: 100%;
+            border: 1px solid rgb(14, 13, 13);
+            background-color: black;
         }
-        .solarSystem>div{
+        @keyframes moveSolorSystem {
+            0%{
+                transform: rotate(0deg) translateX(var(--moveX));
+            }
+            100%{
+                transform: rotate(360deg) translateX(var(--moveX));
+            }
+        }
+        div{
             border-radius: 50%;
+            /* transition: 1s all linear; */
+            /* margin-left: 30px; */
+            
         }
         .sun{
-            height: 300px;
-            width: 300px;
-            background-color: yellow;
-            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            background-color: rgb(255, 71, 5);
+            /* position: relative; */
+            top: calc(50% - 200px/2);
+            left: calc(50% - 200px/2);
+            
         }
+        
         .mercury{
-    background-color: brown;
-    height: 100px;
-    width: 100px;            
+            --moveX:190px;
+            background-color: rgb(130, 202, 235);
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: calc(50% - 50px/2);
+            left: calc(50% - 50px/2);
+            transform: translateX(190px);
+            animation: moveSolorSystem linear 2s infinite;
         }
         .venus{
-            background-color: brown;
-            height: 100px;
-            width: 100px;
+            --moveX:290px;
+            background-color: palevioletred;
+            height: 70px;
+            width: 70px;
+            position: absolute;
+            top: calc(50% - 70px/2);
+            left: calc(50% - 70px/2);
+            animation: moveSolorSystem linear 2s infinite;
         }
         .earth{
-            background-color: brown;
-            height: 100px;
-            width: 100px;
+            --moveX:380px;
+            background-color: rgb(31, 67, 228);
+            height: 80px;
+            width: 80px;
+            position: absolute;
+            top: calc(50% - 80px/2);
+            left: calc(50% - 80px/2);
+            
+            animation: moveSolorSystem linear 4s infinite;
         }
         .mars{
+            --moveX:430px;
             background-color: brown;
-            height: 100px;
-            width: 100px;
+            height: 66px;
+            width: 66px;
+            position: absolute;
+            top: calc(50% - 66px/2);
+            left: calc(50% - 66px/2);
+            animation: moveSolorSystem linear 5s infinite;
         }
         .jupiter{
-            background-color: brown;
-            height: 100px;
-            width: 100px;
+            --moveX:530px;
+            background-color: rgb(189, 144, 22);
+            height: 120px;
+            width: 120px;
+            position: absolute;
+            top: calc(50% - 120px/2);
+            left: calc(50% - 120px/2);
+            
+            animation: moveSolorSystem linear 6s infinite;
         }
     </style>
 </head>
 <body>
-    <div class="solarSystem">
+    
+        
         <div class="sun">
-            
+        
         </div>
+        
         <div class="mercury">
 
         </div>
@@ -75,6 +119,7 @@
         <div class="jupiter">
 
         </div>
-    </div>
+        
+    
 </body>
 </html>
