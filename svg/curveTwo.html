@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .move-waves{
+            animation: move 1s linear infinite
+        }
+        @keyframes move {
+            from { 
+                transform: translate(-100px);
+            }
+            to { 
+                transform: translate(0px)
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg width="600" height="600" viewBox="0 0 600 600">
+        <defs>
+            <polyline  
+            class="move-waves"
+            points="68 128 120 203 170 128 234 203 293 128 351 203 410 128 470 203 530 128"
+            stroke="black" 
+            
+            fill="none"
+            id="path-wave"
+            stroke-width="10" />
+        </defs>
+        <clippath id="circle">
+
+            <circle cx="200" cy="200" r="150" fill="none" />
+        </clippath>
+        <circle cx="200" cy="200" r="150" fill="pink" />
+        <g clip-path=url(#circle)>
+            <use href="#path-wave" x="0" y="0" />
+            <use href="#path-wave" x="0" y="-50" />
+            <use href="#path-wave" x="0" y="50" />
+            <use href="#path-wave" x="0" y="100" />
+            <use href="#path-wave" x="0" y="150" />
+            
+        </g>
+    </svg>
+</body>
+</html>
